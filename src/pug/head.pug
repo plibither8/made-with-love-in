@@ -6,33 +6,42 @@ meta(charset="utf-8")
 meta(lang="en")
 meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0")
 meta(name="author" content="Mihir Chaturvedi (plibither8)")
+meta(http-equiv="X-UA-Compatible" content="IE=edge")
+
 //- Search Engine
 meta(name="description" content='Mircoservice for serving and listing "Made with love in <country-name>" badges')
 meta(name='image' content='https://madewithlove.now.sh/icons/heart.png')
+
 //- Schema.org for Google
 meta(itemprop='name' content='Made with ❤ in <country-name>')
-meta(itemprop='description' content="Mircoservice for serving and listing 'Made with love in ' badges")
+meta(itemprop='description' content="Mircoservice for serving and listing 'Made with love in' badges")
 meta(itemprop='image' content='https://madewithlove.now.sh/icons/heart.png')
+
 //- Twitter
 meta(name='twitter:card' content='summary')
 meta(name='twitter:title' content='Made with ❤ in <country-name>')
-meta(name='twitter:description' content="Mircoservice for serving and listing 'Made with love in ' badges")
+meta(name='twitter:description' content="Mircoservice for serving and listing 'Made with love in' badges")
 meta(name='twitter:site' content='@plibither8')
 meta(name='twitter:creator' content='@plibither8')
 meta(name='twitter:image:src' content='https://madewithlove.now.sh/icons/heart.png')
+
 //- Open Graph general (Facebook, Pinterest & Google+)
 meta(name='og:title' content='Made with ❤ in <country-name>')
-meta(name='og:description' content="Mircoservice for serving and listing 'Made with love in ' badges")
+meta(name='og:description' content="Mircoservice for serving and listing 'Made with love in' badges")
 meta(name='og:url' content='https://madewithlove.now.sh')
 meta(name='og:site_name' content='Made with ❤ in <country-name>')
 meta(name='og:locale' content='en')
 meta(name='og:type' content='website')
 
-meta(http-equiv="X-UA-Compatible" content="IE=edge")
+//- Global site tag (gtag.js) - Google Analytics
+script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-86157079-9')
+script.
+	function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-86157079-9");
+
+//- Favicons and styles
 meta(name="msapplication-TileColor" content="#dc3545")
 meta(name="msapplication-config" content="/icons/browserconfig.xml")
 meta(name="theme-color" content="#dc3545")
-
 link(rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png")
 link(rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png")
 link(rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png")
