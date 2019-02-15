@@ -1,0 +1,42 @@
+{
+  "name": "made-with-love-in-badges",
+  "version": 2,
+  "alias": "madewithlove.now.sh",
+  "github": {
+    "enabled": true,
+    "silent": true
+  },
+  "builds": [{
+      "src": "app.js",
+      "use": "@now/node-server",
+      "config": {
+        "maxLambdaSize": "40mb"
+      }
+    }, {
+      "src": "/public/**/*",
+      "use": "@now/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/public/index.html"
+    },
+    {
+      "src": "/index.css",
+      "dest": "/public/index.css"
+    },
+    {
+      "src": "/index.js",
+      "dest": "/public/index.js"
+    },
+    {
+      "src": "/icons/*",
+      "dest": "/public/icons/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "app.js"
+    }
+  ]
+}

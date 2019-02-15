@@ -1,0 +1,71 @@
+.badge-generator
+
+	h2 Badge Generator
+
+	form
+
+		.flex.country-selection
+			h4 Country
+			select(name="country" data-default="")#input-country-select
+				each key in Object.keys(countryNames).sort()
+					option(value=key)= key
+
+		h4 Options
+
+		.options
+			.option.flex
+				label Use Heart (❤)
+				input(type="checkbox" name="heart" data-default="false")
+
+			.option.flex
+				label Color A
+				input(type="color" name="colorA" data-default="#555555" value="#555555")
+
+			.option.flex
+				label Color B
+				input(type="color" name="colorB" data-default="#dc3545" value="#dc3545")
+
+			.option.flex
+				label Template
+				select(name="template" value="flat" data-default="flat")
+					each template in ["flat", "flat-square", "for-the-badge", "plastic", "social"]
+						option(value=template)= template.split('-').join(' ')
+
+			.option.flex
+				label Custom text
+				input(type="text" name="text" placeholder="Custom text" data-default="")
+
+	h3 Your Badge
+
+	h4 SVG
+
+	.svg
+		img#output-svg
+
+	.output.flex
+		h4 URL
+		.copy-btn(data-clipboard-target="#output-url") COPY
+
+	.code
+		pre#output-url
+
+	.output.flex
+		h4 HTML
+		.copy-btn(data-clipboard-target="#output-html") COPY
+
+	.code
+		pre#output-html
+
+	.output.flex
+		h4 Markdown
+		.copy-btn(data-clipboard-target="#output-md") COPY
+
+	.code
+		pre#output-md
+
+	.output.flex
+		h4 reStructuredText
+		.copy-btn(data-clipboard-target="#output-rst") COPY
+
+	.code
+		pre#output-rst

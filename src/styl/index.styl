@@ -1,0 +1,60 @@
+@require "base"
+
+.container
+	width 95%
+	max-width 700px
+	margin 0 auto
+	overflow-x hidden
+	padding 20px 0
+
+	.title-badge
+		overflow-x auto
+		padding 20px 0
+
+		h1
+			color #fff
+			font-weight normal
+			font-size 30px
+			box-shadow 0 0 20px #bbb
+			display inline-block
+			white-space nowrap
+
+			span
+				padding 5px 10px
+				&#badge-text-A
+					background #555
+					border-radius 7px 0 0 7px
+				&#badge-text-B
+					background #dc3545
+					border-radius 0 7px 7px 0
+
+			@media only screen and (max-width 800px)
+				font-size 20px
+
+	img
+		vertical-align middle
+
+	p.intro
+		line-height 1.5
+		color #222
+		font-size 18px
+		margin 10px 0 20px 0
+
+		img
+			margin 0 5px
+
+	.footer
+		margin 20px 0
+
+		p
+			font-size 16px
+			color #444
+			line-height 1.5
+			text-align center
+			padding 5px 0
+
+			a
+				color #333
+				text-decoration underline
+
+	@import "badge-generator.styl"
