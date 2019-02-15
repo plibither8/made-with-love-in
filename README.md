@@ -6,6 +6,8 @@
 
 Provides a quick and easy way to add the "Made with love in `country-name`" badge to show off your project's country of origin!
 
+Go to [madewithlove.now.sh](https://madewithlove.now.sh) to generate your own badge 🙂.
+
 ## About
 
 I built this project primarily to understand how to implement small-scale and simple APIs (microservices), especially using [now.sh](https://now.sh) and it's serverless deployments.
