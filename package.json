@@ -1,5 +1,5 @@
 {
-  "name": "made-with-love-in-badges",
+  "name": "made-with-love-in",
   "version": "1.0.0",
   "description": "Mircoservice for serving and listing \"Made with love in <country-name>\" badges",
   "main": "app.js",
@@ -10,13 +10,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/plibither8/made-with-love-in-badges.git"
+    "url": "git+https://github.com/plibither8/made-with-love-in.git"
   },
   "author": "Mihir Chaturvedi",
   "bugs": {
-    "url": "https://github.com/plibither8/made-with-love-in-badges/issues"
+    "url": "https://github.com/plibither8/made-with-love-in/issues"
   },
-  "homepage": "https://github.com/plibither8/made-with-love-in-badges#readme",
+  "homepage": "https://github.com/plibither8/made-with-love-in#readme",
   "dependencies": {
     "express": "^4.16.3",
     "gh-badges": "^2.1.0",
