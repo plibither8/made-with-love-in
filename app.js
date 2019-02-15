@@ -1,10 +1,12 @@
 const path = require('path');
 const express = require('express');
+const expressGa = require('express-ga-middleware');
 const {BadgeFactory} = require('gh-badges');
 const DATA = require('./data.json');
 
 const app = express();
 
+app.use(expressGa('UA-86157079-9'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {

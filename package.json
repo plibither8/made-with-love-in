@@ -19,6 +19,7 @@
   "homepage": "https://github.com/plibither8/made-with-love-in#readme",
   "dependencies": {
     "express": "^4.16.3",
+    "express-ga-middleware": "^0.1.6",
     "gh-badges": "^2.1.0",
     "gulp-pug": "^4.0.1",
     "pug": "^2.0.3"
@@ -63,7 +64,9 @@
     }
   },
   "xo": {
-    "ignore": ["public/**/*"],
+    "ignore": [
+      "public/**/*"
+    ],
     "overrides": [
       {
         "files": "src/js/*.js",
