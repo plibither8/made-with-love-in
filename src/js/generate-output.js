@@ -40,3 +40,7 @@ form.addEventListener('change', () => {
 	document.querySelector('#output-md').innerHTML = `![Made with love in ${countryName}](${badgeUrl})`;
 	document.querySelector('#output-rst').innerHTML = `.. image:: ${badgeUrl}`;
 });
+
+form.addEventListener('submit', (e) => {
+	e.preventDefault();
+});
