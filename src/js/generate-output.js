@@ -46,7 +46,7 @@ const generateOutput = () => {
 
 form.addEventListener('change', generateOutput);
 
-form.addEventListener('submit', (e) => {
+form.addEventListener('submit', e => {
 	e.preventDefault();
 });
 

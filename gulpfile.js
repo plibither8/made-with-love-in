@@ -40,14 +40,14 @@ gulp.task('inlineCss', () => {
 
 gulp.task('deleteCss', () => {
 	return del('public/index.css');
-})
+});
 
 gulp.task('html', gulp.series(
-		'pug',
-		'generateCss',
-		'inlineCss',
-		'deleteCss'
-	)
+	'pug',
+	'generateCss',
+	'inlineCss',
+	'deleteCss'
+)
 );
 
 gulp.task('js', () => {

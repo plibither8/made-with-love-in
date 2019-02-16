@@ -23,8 +23,8 @@ GET /list
 GET /:countryCode
 
 e.g. GET /in
-     GET /gb?heart=true&flag=true
-     GET /us?colorA=lightgreen&colorB=red&text=USA
+    GET /gb?heart=true&flag=true
+    GET /us?colorA=lightgreen&colorB=red&text=USA
 ```
 ---
 
