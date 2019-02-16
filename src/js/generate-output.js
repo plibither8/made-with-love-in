@@ -30,14 +30,17 @@ const getSearchParamsData = () => {
 form.addEventListener('change', () => {
 	const countryName = inputCountrySelect.value;
 
-	let searchParams = new URLSearchParams(getSearchParamsData()).toString();
+	const searchParamsData = getSearchParamsData();
+	let searchParams = new URLSearchParams(searchParamsData).toString();
 	searchParams = searchParams === '' ? '' : `?${searchParams}`;
 	const badgeUrl = `https://madewithlove.now.sh/${countryNames[countryName]}${searchParams}`;
 
+	const textB = 'text' in searchParamsData ? searchParamsData.text : countryName;
+	const altText = `Made with love in ${textB}`;
 	document.querySelector('#output-svg').src = badgeUrl;
 	document.querySelector('#output-url').innerHTML = badgeUrl;
-	document.querySelector('#output-html').innerHTML = `&lt;img src="${badgeUrl}"&gt;`;
-	document.querySelector('#output-md').innerHTML = `![Made with love in ${countryName}](${badgeUrl})`;
+	document.querySelector('#output-html').innerHTML = `&lt;img src="${badgeUrl}" alt="${altText}"&gt;`;
+	document.querySelector('#output-md').innerHTML = `![${altText}](${badgeUrl})`;
 	document.querySelector('#output-rst').innerHTML = `.. image:: ${badgeUrl}`;
 });
 
