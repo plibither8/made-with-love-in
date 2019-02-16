@@ -22,7 +22,8 @@
     "express-ga-middleware": "^0.1.6",
     "gh-badges": "^2.1.0",
     "gulp-pug": "^4.0.1",
-    "pug": "^2.0.3"
+    "pug": "^2.0.3",
+    "shrink-ray-current": "^3.0.2"
   },
   "devDependencies": {
     "autoprefixer": "^8.2.0",
@@ -39,6 +40,7 @@
     "gulp-csslint": "^1.0.1",
     "gulp-esformatter": "^6.1.0",
     "gulp-html": "0.4.7",
+    "gulp-inline-source": "^4.0.0",
     "gulp-postcss": "^7.0.1",
     "gulp-stylus": "^2.6.0",
     "gulp-watch": "^4.3.11",

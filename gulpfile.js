@@ -3,6 +3,7 @@ const babel = require('gulp-babel');
 const concat = require('gulp-concat');
 const cssnano = require('cssnano');
 const gulp = require('gulp');
+const inlineSource = require('gulp-inline-source');
 const postcss = require('gulp-postcss');
 const pug = require('gulp-pug');
 const stylus = require('gulp-stylus');
@@ -13,12 +14,15 @@ gulp.task('pug', () => {
 	Object.keys(DATA).forEach(key => {
 		nameToCodeMap[DATA[key]] = key;
 	});
-	return gulp.src('src/pug/index.pug')
+	gulp.src('src/pug/index.pug')
 		.pipe(pug({
 			locals: {
 				countryNames: nameToCodeMap
 			}
 		}))
+		.pipe(gulp.dest('public/'));
+	return gulp.src('public/index.html')
+		.pipe(inlineSource())
 		.pipe(gulp.dest('public/'));
 });
 
