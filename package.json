@@ -21,8 +21,7 @@
     "express": "^4.16.3",
     "express-ga-middleware": "^0.1.6",
     "gh-badges": "^2.1.0",
-    "pug": "^2.0.3",
-    "shrink-ray-current": "^3.0.2"
+    "pug": "^2.0.3"
   },
   "devDependencies": {
     "autoprefixer": "^8.2.0",
