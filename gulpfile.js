@@ -2,6 +2,7 @@ const autoprefixer = require('autoprefixer');
 const babel = require('gulp-babel');
 const concat = require('gulp-concat');
 const cssnano = require('cssnano');
+const del = require('del');
 const gulp = require('gulp');
 const inlineSource = require('gulp-inline-source');
 const postcss = require('gulp-postcss');
@@ -14,24 +15,40 @@ gulp.task('pug', () => {
 	Object.keys(DATA).forEach(key => {
 		nameToCodeMap[DATA[key]] = key;
 	});
-	gulp.src('src/pug/index.pug')
+
+	return gulp.src('src/pug/index.pug')
 		.pipe(pug({
 			locals: {
 				countryNames: nameToCodeMap
 			}
 		}))
 		.pipe(gulp.dest('public/'));
-	return gulp.src('public/index.html')
-		.pipe(inlineSource())
-		.pipe(gulp.dest('public/'));
 });
 
-gulp.task('css', () => {
+gulp.task('generateCss', () => {
 	return gulp.src('src/styl/index.styl')
 		.pipe(stylus())
 		.pipe(postcss([autoprefixer, cssnano]))
 		.pipe(gulp.dest('public/'));
 });
+
+gulp.task('inlineCss', () => {
+	return gulp.src('public/index.html')
+		.pipe(inlineSource())
+		.pipe(gulp.dest('public/'));
+});
+
+gulp.task('deleteCss', () => {
+	return del('public/index.css');
+})
+
+gulp.task('html', gulp.series(
+		'pug',
+		'generateCss',
+		'inlineCss',
+		'deleteCss'
+	)
+);
 
 gulp.task('js', () => {
 	return gulp.src('src/js/*.js')
@@ -44,6 +61,10 @@ gulp.task('js', () => {
 		.pipe(gulp.dest('public/'));
 });
 
-gulp.task('default', ['css', 'js', 'pug'], () => {
-	gulp.watch('src/**/*', ['css', 'js', 'pug']);
+gulp.task('watch', () => {
+	gulp.watch('src/**/*', gulp.parallel('js', 'html'));
 });
+
+gulp.task('build', gulp.parallel('js', 'html'));
+
+gulp.task('default', gulp.series('build', 'watch'));

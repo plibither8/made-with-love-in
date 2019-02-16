@@ -27,7 +27,7 @@ const getSearchParamsData = () => {
 	return searchParamsData;
 };
 
-form.addEventListener('change', () => {
+const generateOutput = () => {
 	const countryName = inputCountrySelect.value;
 
 	const searchParamsData = getSearchParamsData();
@@ -42,8 +42,12 @@ form.addEventListener('change', () => {
 	document.querySelector('#output-html').innerHTML = `&lt;img src="${badgeUrl}" alt="${altText}"&gt;`;
 	document.querySelector('#output-md').innerHTML = `![${altText}](${badgeUrl})`;
 	document.querySelector('#output-rst').innerHTML = `.. image:: ${badgeUrl}`;
-});
+};
+
+form.addEventListener('change', generateOutput);
 
 form.addEventListener('submit', (e) => {
 	e.preventDefault();
 });
+
+generateOutput();

@@ -23,10 +23,6 @@
       "dest": "/public/index.html"
     },
     {
-      "src": "/index.css",
-      "dest": "/public/index.css"
-    },
-    {
       "src": "/index.js",
       "dest": "/public/index.js"
     },

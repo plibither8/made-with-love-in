@@ -4,7 +4,6 @@ const countrySwitchNames = () => {
 	const nameList = Object.keys(countryNames);
 	const index = Math.floor(Math.random() * nameList.length);
 	const name = nameList[index];
-	document.title = `Made with ❤ in ${name}`;
 	countryNameSpan.innerHTML = name;
 };
 
