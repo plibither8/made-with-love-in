@@ -41,7 +41,6 @@
     "gulp-esformatter": "^6.1.0",
     "gulp-html": "0.4.7",
     "gulp-inline-source": "^4.0.0",
-    "gulp-nodemon": "^2.4.2",
     "gulp-postcss": "^7.0.1",
     "gulp-pug": "^4.0.1",
     "gulp-stylus": "^2.6.0",
