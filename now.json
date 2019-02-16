@@ -10,7 +10,7 @@
       "src": "app.js",
       "use": "@now/node-server",
       "config": {
-        "maxLambdaSize": "40mb"
+        "maxLambdaSize": "45mb"
       }
     }, {
       "src": "/public/**/*",
