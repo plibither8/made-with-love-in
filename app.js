@@ -35,7 +35,6 @@ app.get('/:countryCode', (req, res) => {
 	};
 
 	const countryName = DATA[countryCode.toLowerCase()];
-
 	const countryText = 'text' in config ? config.text : countryName;
 
 	const badgeFormat = {
@@ -49,7 +48,6 @@ app.get('/:countryCode', (req, res) => {
 	};
 
 	const badgeSvg = new BadgeFactory().create(badgeFormat);
-	console.log(badgeSvg);
 
 	res.type('svg');
 	return res.send(badgeSvg);
