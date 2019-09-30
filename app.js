@@ -1,32 +1,32 @@
 const path = require('path');
-const express = require('express');
-const expressGa = require('express-ga-middleware');
+const fastify = require('fastify')();
 const {BadgeFactory} = require('gh-badges');
 const DATA = require('./data.json');
 
-const app = express();
+fastify.register(require('fastify-static'), {
+	root: path.join(__dirname, 'public'),
+	prefix: '/public/',
+})
 
-app.use(expressGa('UA-86157079-9'));
-
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.get('/', (req, res) => {
-	return res.sendFile('public/index.html', {
-		root: __dirname
-	});
+fastify.get('/', (req, reply) => {
+	return reply.sendFile('index.html');
 });
 
-app.get('/list', (req, res) => {
-	return res.json(DATA);
+fastify.get('/index.js', (req, reply) => {
+	return reply.sendFile('index.js');
 });
 
-app.get('/:countryCode', (req, res) => {
+fastify.get('/list', (req, reply) => {
+	return reply.json(DATA);
+});
+
+fastify.get('/:countryCode', (req, reply) => {
 	let {countryCode} = req.params;
 	countryCode = countryCode.toLowerCase();
 
 	if (!(countryCode in DATA)) {
-		res.status(400);
-		return res.send(`<pre>Error 400: country code "${countryCode}" not found.\nGET /list for list of valid country codes.</pre>`);
+		reply.status(400);
+		return reply.send(`<pre>Error 400: country code "${countryCode}" not found.\nGET /list for list of valid country codes.</pre>`);
 	}
 
 	const config = {
@@ -49,8 +49,8 @@ app.get('/:countryCode', (req, res) => {
 
 	const badgeSvg = new BadgeFactory().create(badgeFormat);
 
-	res.type('svg');
-	return res.send(badgeSvg);
+	reply.type('image/svg+xml');
+	return reply.send(badgeSvg);
 });
 
-app.listen(process.env.PORT || 5000);
+fastify.listen(process.env.PORT || 5000);
