@@ -8,7 +8,7 @@
 			label(for="input-country-select") Country
 			select#input-country-select(name="country" data-default="")
 				each key in Object.keys(countryNames).sort()
-					option(value=key)= key
+					option(value=key disabled=(key==="Portugal"))= key
 
 		h4 Options
 
