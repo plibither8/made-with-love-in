@@ -24,10 +24,6 @@ fastify.get('/:countryCode', (req, reply) => {
 	let {countryCode} = req.params;
 	countryCode = countryCode.toLowerCase();
 
-	if (countryCode === "pt") {
-		return reply.send();
-	}
-
 	if (!(countryCode in DATA)) {
 		reply.status(400);
 		return reply.send(`<pre>Error 400: country code "${countryCode}" not found.\nGET /list for list of valid country codes.</pre>`);
