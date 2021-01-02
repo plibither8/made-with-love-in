@@ -2,7 +2,7 @@
 
 ![Made with love in India](https://madewithlove.now.sh/in?heart=true&template=for-the-badge)
 
-> A mircoservice for serving and listing the "Made with love in" badge.
+> A microservice for serving and listing the "Made with love in" badge.
 
 Provides a quick and easy way to add the "Made with love in `country-name`" badge to show off your project's country of origin!
 
