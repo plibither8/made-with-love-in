@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/plibither8/made-with-love-in#readme",
   "dependencies": {
-    "fastify": "^3.10.1",
+    "fastify": "^2.15.1",
     "fastify-static": "^3.4.0",
     "gh-badges": "^2.1.0",
     "pug": "^3.0.0"
