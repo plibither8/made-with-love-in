@@ -21,7 +21,7 @@
     "fastify": "^3.10.1",
     "fastify-static": "^3.4.0",
     "gh-badges": "^2.1.0",
-    "pug": "^3.0.0"
+    "pug": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.3",
